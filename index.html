@@ -1,15 +1,27 @@
 <!DOCTYPE html>
     <html>
         <head>
-            
+
             <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
         </head>
         <body>
             <!-- Main body code-->
+            <div id="app">
 
+            </div>
             <!-- Javascript code -->
             <script type="text/javascript" >
-
+                var subjectStore = new Vue ({
+                    //linking with app id
+                    el : "#app",
+                    //data code 
+                    data :{
+                        'Subject':'Math',
+                        'Location': 'London',
+                        'Price': '$100',
+                        'Spaces':5
+                    }
+                });
             </script>
         </body>
     </html>
