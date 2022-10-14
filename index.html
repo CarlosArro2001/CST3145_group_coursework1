@@ -18,6 +18,9 @@
                     <p v-text="classes.Location"></p>
                     <p v-text="classes.price"></p>
                     <p> Space left: {{classes.Spaces}}</p>
+                    <button v-on:click="addItem" :disabled="countSpace==0">
+                        Add to Cart 
+                    </button>
                 </main>
 
             </div>
@@ -33,10 +36,28 @@
                         'Location': 'London',
                         'Price': '$100',
                         'Spaces':5,
-                        'Image':"image/math.png"
+                        'Image':"images/math.png"
                         },
-                    cart : []
+
+                    },
+                   
+                    methods: {
+                    addItem:function() {
+                    
+                        this.classes.Spaces=this.classes.Spaces - 1;
+                        
+                        
+                    },
+                        
+                },
+                computed: {
+                    countSpace: function ()
+                    {
+                        return this.classes.Spaces >  0;
+
+
                     }
+                }
                 });
             </script>
         </body>
