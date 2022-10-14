@@ -1,12 +1,24 @@
 <!DOCTYPE html>
     <html>
         <head>
+            <title>After Class Activity</title>
 
             <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
         </head>
         <body>
             <!-- Main body code-->
             <div id="app">
+                <main>
+                    <figure>
+
+                        <img v-bind:src="classes.Image">
+
+                    </figure>
+                    <h2 v-text="classes.Subject"></h2>
+                    <p v-text="classes.Location"></p>
+                    <p v-text="classes.price"></p>
+                    <p> Space left: {{classes.Spaces}}</p>
+                </main>
 
             </div>
             <!-- Javascript code -->
@@ -16,10 +28,13 @@
                     el : "#app",
                     //data code 
                     data :{
+                        classes:{
                         'Subject':'Math',
                         'Location': 'London',
                         'Price': '$100',
-                        'Spaces':5
+                        'Spaces':5,
+                        'Image':"image/math.png"
+                        },
                     }
                 });
             </script>
